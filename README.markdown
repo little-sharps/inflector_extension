@@ -38,3 +38,4 @@ Usage
 
 The extension classes are in the global namespace so you don't need any `usings` before they are available.
 
+See the [specs](http://github.com/brendanjerwin/inflector_extension/blob/master/inflector_extension/Specs/Inflections.cs "inflector_extension/Specs/Inflections.cs at master from brendanjerwin's inflector_extension - GitHub") for example usages.
