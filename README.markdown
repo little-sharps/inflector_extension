@@ -34,7 +34,7 @@ Usage
 ----
   1. Build it (Release mode to leave out the Unit Tests)
   2. Reference it
-  3. `"string".Inflect()` or `1.Inflect()`
+  3. `"string".InflectTo()` or `1.InflectTo()`
 
 The extension classes are in the global namespace so you don't need any `usings` before they are available.
 

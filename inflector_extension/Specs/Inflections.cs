@@ -12,68 +12,68 @@ namespace inflector_extension.Specs
         [Test]
         public void ItShouldCamelize()
         {
-            "cat_toy".Inflect().Camelize().Should().Be.EqualTo("catToy");
+            "cat_toy".InflectTo().Camelized.Should().Be.EqualTo("catToy");
         }
         
         [Test]
         public void ItShouldCapitalize()
         {
-            "cat toy".Inflect().Capitalize().Should().Be.EqualTo("Cat toy");
+            "cat toy".InflectTo().Capitalized.Should().Be.EqualTo("Cat toy");
         }
 
         [Test]
         public void ItShouldDasherize()
         {
-            "cat_toy".Inflect().Dasherize().Should().Be.EqualTo("cat-toy");
+            "cat_toy".InflectTo().Dasherized.Should().Be.EqualTo("cat-toy");
         }
 
         [Test]
         public void ItShouldHumanize()
         {
-            "cat_toy".Inflect().Humanize().Should().Be.EqualTo("Cat toy");
+            "cat_toy".InflectTo().Humanized.Should().Be.EqualTo("Cat toy");
         }
 
         [Test]
         public void ItShouldOrdinalize()
         {
-            "5".Inflect().Ordinalize().Should().Be.EqualTo("5th");
-            5.Inflect().Ordinalize().Should().Be.EqualTo("5th");
+            "5".InflectTo().Ordinalized.Should().Be.EqualTo("5th");
+            5.InflectTo().Ordinalized.Should().Be.EqualTo("5th");
         }
 
         [Test]
         public void ItShouldPluralize()
         {
-            "cat".Inflect().Pluralize().Should().Be.EqualTo("cats");
+            "cat".InflectTo().Pluralized.Should().Be.EqualTo("cats");
         }
 
         [Test]
         public void ItShouldSingularize()
         {
-            "cats".Inflect().Singularize().Should().Be.EqualTo("cat");
+            "cats".InflectTo().Singularized.Should().Be.EqualTo("cat");
         }
 
         [Test]
         public void ItShouldTitleize()
         {
-            "catToy".Inflect().Titleize().Should().Be.EqualTo("Cat Toy");
+            "catToy".InflectTo().Titleized.Should().Be.EqualTo("Cat Toy");
         }
 
         [Test]
         public void ItShouldUnaccent()
         {
-            "camión".Inflect().Unaccent().Should().Be.EqualTo("camion");
+            "camión".InflectTo().Unaccented.Should().Be.EqualTo("camion");
         }
 
         [Test]
         public void ItShouldUncapitalize()
         {
-            "Cat Toy".Inflect().Uncapitalize().Should().Be.EqualTo("cat Toy");
+            "Cat Toy".InflectTo().Uncapitalized.Should().Be.EqualTo("cat Toy");
         }
 
         [Test]
         public void ItShouldUnderscore()
         {
-            "catToy".Inflect().Underscore().Should().Be.EqualTo("cat_toy");
+            "catToy".InflectTo().Underscored.Should().Be.EqualTo("cat_toy");
         }
     }
 }

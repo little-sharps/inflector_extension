@@ -14,9 +14,8 @@ namespace inflector_extension
 	        this.inflector = inflector;
 	    }
 
-        public string Ordinalize()
-        {
-            return inflector.Ordinalize(value.ToString());
+        public string Ordinalized {
+            get { return this.inflector.Ordinalize(this.value.ToString()); }
         }
     }
 }
