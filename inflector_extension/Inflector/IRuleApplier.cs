@@ -1,7 +1,7 @@
-namespace uNhAddIns.Inflector
+namespace inflector_extension.Inflector
 {
-	public interface IRuleApplier
-	{
-		string Apply(string word);
-	}
+    internal interface IRuleApplier
+    {
+        string Apply(string word);
+    }
 }

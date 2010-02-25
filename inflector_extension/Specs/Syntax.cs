@@ -11,19 +11,18 @@ namespace inflector_extension.Specs
     {
   
         [Test]
-        public void ItShouldBeStartWithInflect ()
+        public void ItShouldStartWithInflect ()
         {
-        	"test".Inflect ();
+        	"test".Inflect();
         }
 		
 		[Test]
 		public void ItShouldReturnAFluentInflector ()
 		{
-			var result = "foo".Inflect ();
-			result.GetType().Should().Be.EqualTo(typeof(FluentInflector));
+			var result = "foo".Inflect();
+			result.GetType().Should().Be.EqualTo(typeof(FluentStringInflector));
 		}			
-		
-		
+
     }
 }
 

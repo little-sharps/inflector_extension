@@ -1,23 +1,23 @@
 using System.Text.RegularExpressions;
 
-namespace uNhAddIns.Inflector
+namespace inflector_extension.Inflector
 {
-	public class CaseSensitiveRule : AbstractRule
-	{
-		public CaseSensitiveRule(string pattern, string replacement) : base(pattern, replacement) {}
+    internal class CaseSensitiveRule : AbstractRule
+    {
+        public CaseSensitiveRule(string pattern, string replacement) : base(pattern, replacement) {}
 
-		#region Overrides of AbstractRule
+        #region Overrides of AbstractRule
 
-		public override string Apply(string word)
-		{
-			return Regex.Replace(word, Replacement);
-		}
+        public override string Apply(string word)
+        {
+            return Regex.Replace(word, Replacement);
+        }
 
-		protected override Regex CreateRegex()
-		{
-			return new Regex(Pattern, RegexOptions.Compiled);
-		}
+        protected override Regex CreateRegex()
+        {
+            return new Regex(Pattern, RegexOptions.Compiled);
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

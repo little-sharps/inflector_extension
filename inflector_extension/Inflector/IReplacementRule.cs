@@ -1,8 +1,8 @@
-namespace uNhAddIns.Inflector
+namespace inflector_extension.Inflector
 {
-	public interface IReplacementRule : IRuleApplier
-	{
-		string Replacement { get; }
-		string Pattern { get; }
-	}
+    internal interface IReplacementRule : IRuleApplier
+    {
+        string Replacement { get; }
+        string Pattern { get; }
+    }
 }
