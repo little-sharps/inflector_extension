@@ -1,0 +1,21 @@
+<Configuration>
+  <SharedSolutionTemplateManager>
+    <FileTemplates>
+      <Template uid="3224a376-d4e8-4303-a12f-05002543b9bf" shortcut="" description="NUnitTestFixture" text="#if DEBUG&#xD;&#xA;using NUnit.Framework;&#xD;&#xA;using SharpTestsEx;&#xD;&#xA;&#xD;&#xA;// ReSharper disable InconsistentNaming&#xD;&#xA;namespace $NAMESPACE$&#xD;&#xA;{&#xD;&#xA;    [TestFixture]&#xD;&#xA;    public class $CLASS${$END$}&#xD;&#xA;}&#xD;&#xA;// ReSharper restore InconsistentNaming&#xD;&#xA;#endif" reformat="True" shortenQualifiedReferences="True">
+        <Context>
+          <ProjectLanguageContext language="CSharp" />
+        </Context>
+        <Categories />
+        <Variables>
+          <Variable name="NAMESPACE" expression="fileDefaultNamespace()" initialRange="0" />
+          <Variable name="CLASS" expression="getFileNameWithoutExtension()" initialRange="0" />
+        </Variables>
+        <CustomProperties>
+          <Property key="FileName" value="Class" />
+          <Property key="Extension" value="cs" />
+          <Property key="ValidateFileName" value="True" />
+        </CustomProperties>
+      </Template>
+    </FileTemplates>
+  </SharedSolutionTemplateManager>
+</Configuration>
