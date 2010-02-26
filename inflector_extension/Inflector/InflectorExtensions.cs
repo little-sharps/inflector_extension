@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace inflector_extension.Inflector
 {
-    public static class InflectorExtensions
+    internal static class InflectorExtensions
     {
         public const string UppercaseAccentedCharacters = "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖØÙÚÛÜİŞ";
         public const string LowercaseAccentedCharacters = "ßàáâãäåæçèéêëìíîïğñòóôõöøùúûüışÿ";
