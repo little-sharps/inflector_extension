@@ -8,34 +8,34 @@ using SharpTestsEx;
 namespace inflector_extension.Specs
 {
     [TestFixture]
-    public class InflectIntToWord
+    public class InflectIntToPhrase
     {
         [Test]
         public void ItShouldConvertAllTheNonPatternedNumbers() {
-            0.InflectTo().Word.Should().Be.EqualTo("zero");
-            1.InflectTo().Word.Should().Be.EqualTo("one");
-            2.InflectTo().Word.Should().Be.EqualTo("two");
-            3.InflectTo().Word.Should().Be.EqualTo("three");
-            4.InflectTo().Word.Should().Be.EqualTo("four");
-            5.InflectTo().Word.Should().Be.EqualTo("five");
-            6.InflectTo().Word.Should().Be.EqualTo("six");
-            7.InflectTo().Word.Should().Be.EqualTo("seven");
-            8.InflectTo().Word.Should().Be.EqualTo("eight");
-            9.InflectTo().Word.Should().Be.EqualTo("nine");
-            10.InflectTo().Word.Should().Be.EqualTo("ten");
-            11.InflectTo().Word.Should().Be.EqualTo("eleven");
-            12.InflectTo().Word.Should().Be.EqualTo("twelve");
+            0.InflectTo().Phrase.Should().Be.EqualTo("zero");
+            1.InflectTo().Phrase.Should().Be.EqualTo("one");
+            2.InflectTo().Phrase.Should().Be.EqualTo("two");
+            3.InflectTo().Phrase.Should().Be.EqualTo("three");
+            4.InflectTo().Phrase.Should().Be.EqualTo("four");
+            5.InflectTo().Phrase.Should().Be.EqualTo("five");
+            6.InflectTo().Phrase.Should().Be.EqualTo("six");
+            7.InflectTo().Phrase.Should().Be.EqualTo("seven");
+            8.InflectTo().Phrase.Should().Be.EqualTo("eight");
+            9.InflectTo().Phrase.Should().Be.EqualTo("nine");
+            10.InflectTo().Phrase.Should().Be.EqualTo("ten");
+            11.InflectTo().Phrase.Should().Be.EqualTo("eleven");
+            12.InflectTo().Phrase.Should().Be.EqualTo("twelve");
         }
 
         [Test]
         public void ItShouldPrefixNegativeOnNegativeNumbers() {
-            (-1).InflectTo().Word.Should().Be.EqualTo("negative one");
+            (-1).InflectTo().Phrase.Should().Be.EqualTo("negative one");
         }
 
         private void AssertWord(long number, string word)
         {
             Console.WriteLine(number + " :: " + word);
-            number.InflectTo().Word.Should().Be.EqualTo(word);
+            number.InflectTo().Phrase.Should().Be.EqualTo(word);
         }
 
         [TestCase(13, "thirteen")]

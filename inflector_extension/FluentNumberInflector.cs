@@ -54,7 +54,7 @@ namespace inflector_extension
             get { return this.inflector.Ordinalize(this.value.ToString()); }
         }
 
-        public string Word {
+        public string Phrase {
             get {
                 var negativePrefix = "";
                 if (value < 0) {
