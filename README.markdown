@@ -32,10 +32,11 @@ Some Portions of this code (the good parts) are copied from the [unHAddins proje
 
 Usage
 ----
-  1. Build it (Release mode to leave out the Unit Tests)
-  2. Reference it
-  3. `"string".InflectTo()` or `1.InflectTo()`
+  1. Reference it :: The extension classes are in the global namespace so you don't need any `usings` before they are available.
+  2. Use it :: `"string".InflectTo()` or `1.InflectTo()` or, for a real blast: `637849590678.InflectTo().Word`
 
-The extension classes are in the global namespace so you don't need any `usings` before they are available.
+See the [specs](http://github.com/brendanjerwin/inflector_extension/tree/master/inflector_extension/Specs/) for example usages.
 
-See the [specs](http://github.com/brendanjerwin/inflector_extension/blob/master/inflector_extension/Specs/Inflections.cs "inflector_extension/Specs/Inflections.cs at master from brendanjerwin's inflector_extension - GitHub") for example usages.
+------
+
+_In case you are wondering, that big-ass number turns into:_ `"six hundred and thirty seven billion, eight hundred and forty nine million, five hundred and ninety thousand, six hundred and seventy eight"`
