@@ -1,4 +1,3 @@
-
 #if DEBUG
 using NUnit.Framework;
 using SharpTestsEx;
@@ -62,7 +61,7 @@ namespace inflector_extension.Specs
         [Test]
         public void ItShouldUnaccent()
         {
-            "camiï¿½n".InflectTo().Unaccented.Should().Be.EqualTo("camion");
+            "camión".InflectTo().Unaccented.Should().Be.EqualTo("camion");
         }
 
         [Test]
