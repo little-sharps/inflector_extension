@@ -61,7 +61,7 @@ namespace inflector_extension.Specs
         [Test]
         public void ItShouldUnaccent()
         {
-            "camión".InflectTo().Unaccented.Should().Be.EqualTo("camion");
+            "camiÃ³n".InflectTo().Unaccented.Should().Be.EqualTo("camion");
         }
 
         [Test]
