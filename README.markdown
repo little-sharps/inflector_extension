@@ -1,6 +1,17 @@
 Inflector Extension
 ======
 
+Usage
+----
+  1. Reference it :: The extension classes are in the global namespace so you don't need any `usings` before they are available.
+  2. Use it :: `"string".InflectTo()` or `1.InflectTo()` or, for a real blast: `637849590678.InflectTo().Phrase`
+
+See the [specs](http://github.com/brendanjerwin/inflector_extension/tree/master/inflector_extension/Specs/) for example usages.
+
+------
+
+_In case you are wondering, that big-ass number turns into:_ `"six hundred and thirty seven billion, eight hundred and forty nine million, five hundred and ninety thousand, six hundred and seventy eight"`
+
 License
 ----
 Copyright (c) 2010, Brendan Erwin and contributors.
@@ -28,14 +39,5 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-Some Portions of this code (the good parts) are copied from the [unHAddins project ](http://code.google.com/p/unhaddins/ "unhaddins - Project Hosting on Google Code").
+Some Portions of this code (the best parts, right?) are copied from the [unHAddins project ](http://code.google.com/p/unhaddins/ "unhaddins - Project Hosting on Google Code").
 
-Usage
-----
-  1. Build it (Release mode to leave out the Unit Tests)
-  2. Reference it
-  3. `"string".InflectTo()` or `1.InflectTo()`
-
-The extension classes are in the global namespace so you don't need any `usings` before they are available.
-
-See the [specs](http://github.com/brendanjerwin/inflector_extension/blob/master/inflector_extension/Specs/Inflections.cs "inflector_extension/Specs/Inflections.cs at master from brendanjerwin's inflector_extension - GitHub") for example usages.
