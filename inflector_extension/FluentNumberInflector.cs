@@ -43,7 +43,7 @@ namespace inflector_extension
         {8, "eighty"},
         {9, "ninety"}};
 
-        private string[] _scaleNumbers = new[] { "", "thousand", "million", "billion" };
+        private readonly string[] scaleWords = new[] { "", "thousand", "million", "billion" };
 
         internal FluentNumberInflector(Int64 value, IInflector inflector) {
             this.value = value;
@@ -56,7 +56,7 @@ namespace inflector_extension
 
         public string Word {
             get {
-                string negativePrefix = "";
+                var negativePrefix = "";
                 if (value < 0) {
                     negativePrefix = "negative ";
                 }
@@ -68,78 +68,61 @@ namespace inflector_extension
         private string GetNonSimpleName(long absValue) {
             
             var digitSets = GetDigitSets(absValue);
-
             var setWords = new string[4];
 
-            for (int i = 0; i < 4; i++)
-            {
+            for (var i = 0; i < 4; i++)
                 setWords[i] = ThreeDigitSetToWords(digitSets[i]);
-            }
 
             return CombineWordSets(setWords, digitSets);
         }
 
         private string CombineWordSets(string[] setWords, long[] digitSets) {
             var combined = setWords[0];
-            bool appendAnd;
+            var appendAnd = ShouldAppendAnAnd(digitSets);
 
-            // Determine whether an 'and' is needed
-            appendAnd = (digitSets[0] > 0) && (digitSets[0] < 100);
-
-            // Process the remaining groups in turn, smallest to largest
-            for (int i = 1; i < 4; i++)
+            for (var i = 1; i < 4; i++)
             {
-                // Only add non-zero items
                 if (digitSets[i] != 0)
                 {
-                    // Build the string to add as a prefix
-                    string prefix = setWords[i] + " " + this._scaleNumbers[i];
+                    var prefix = setWords[i] + " " + this.scaleWords[i];
 
                     if (combined.Length != 0)
-                    {
                         prefix += appendAnd ? " and " : ", ";
-                    }
 
-                    // Opportunity to add 'and' is ended
                     appendAnd = false;
 
-                    // Add the three-digit group to the combined string
                     combined = prefix + combined;
                 }
             }
             return combined;
         }
 
-        private string ThreeDigitSetToWords(long digitSet) {
-            string groupText = "";
+        private static bool ShouldAppendAnAnd(long[] digitSets) {
+            return (digitSets[0] > 0) && (digitSets[0] < 100);
+        }
 
-            // Determine the hundreds and the remainder
+        private string ThreeDigitSetToWords(long digitSet) {
+            var groupText = "";
+
             var hundreds = digitSet / 100;
             var tensUnits = digitSet % 100;
 
-            // Hundreds rules
             if (hundreds != 0)
             {
                 groupText += simpleCases[hundreds] + " hundred";
 
                 if (tensUnits != 0)
-                {
                     groupText += " and ";
-                }
             }
 
-            // Determine the tens and units
             var tens = tensUnits / 10;
             var units = tensUnits % 10;
 
-            // Tens rules
             if (tens >= 2)
             {
                 groupText += tensCases[tens];
                 if (units != 0)
-                {
                     groupText += " " + simpleCases[units];
-                }
             }
             else if (tensUnits != 0)
                 groupText += simpleCases[tensUnits];
@@ -147,7 +130,7 @@ namespace inflector_extension
             return groupText;
         }
 
-        private long[] GetDigitSets(long absValue) {
+        private static long[] GetDigitSets(long absValue) {
             var digitSets = new long[4];
             for (int i = 0; i < 4; i++) {
                 digitSets[i] = absValue % 1000;
