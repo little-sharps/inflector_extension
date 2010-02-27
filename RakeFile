@@ -26,7 +26,7 @@ namespace :release do
 		tag_name = ENV['TAG']
 		if tag_name 
 			`git tag "#{tag_name}"`
-			#`git push origin "#{tag_name}"`
+			`git push origin "#{tag_name}"`
 		else
 			puts 'No tag specified, not tagging.'
 		end
