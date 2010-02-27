@@ -1,0 +1,39 @@
+require 'albacore'
+
+namespace :release do
+	desc "Build release binaries."
+	msbuild :build do |msb|
+	  msb.properties :configuration => :Release
+	  msb.targets :Rebuild
+	  msb.solution = "inflector_extension.sln"
+	end
+	
+	desc "Package release image"
+	zip :package => :build do |zip|
+		tag_name = ENV['TAG']
+		if tag_name 
+			zip.directories_to_zip "inflector_extension/bin/Release/"
+			zip.additional_files = "README.markdown"
+			zip.output_file = "inflector_extension-#{tag_name}.zip"
+			zip.output_path = File.dirname(__FILE__)
+		else
+			puts 'No tag specified, not packaging.'
+		end
+	end
+	
+	desc "Tag repository"
+	task :tag do 
+		tag_name = ENV['TAG']
+		if tag_name 
+			`git tag "#{tag_name}"`
+			#`git push origin "#{tag_name}"`
+		else
+			puts 'No tag specified, not tagging.'
+		end
+	end
+	
+	desc "Do all release tasks"
+	task :all => [:tag, :package] do
+	
+	end
+end

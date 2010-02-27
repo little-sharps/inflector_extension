@@ -1,7 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inflector_extension", "inflector_extension.csproj", "{3B23FF35-5F36-459E-A4DF-ABDB4FC35767}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{FBF5CB56-6E13-404C-B770-9777057F4E5F}"
+	ProjectSection(SolutionItems) = preProject
+		RakeFile = RakeFile
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inflector_extension", "inflector_extension\inflector_extension.csproj", "{3B23FF35-5F36-459E-A4DF-ABDB4FC35767}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
