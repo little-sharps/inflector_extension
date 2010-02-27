@@ -10,7 +10,7 @@ See the [specs](http://github.com/brendanjerwin/inflector_extension/tree/master/
 
 ------
 
-_In case you are wondering, that big-ass number turns into:_ `"six hundred and thirty seven billion, eight hundred and forty nine million, five hundred and ninety thousand, six hundred and seventy eight"`
+_In case you are wondering, that big-ass number turns into:_ `"Six Hundred and Thirty Seven Billion, Eight Hundred and Forty Nine Million, Five Hundred and Ninety Thousand, Six Hundred and Seventy Eight"`
 
 License
 ----

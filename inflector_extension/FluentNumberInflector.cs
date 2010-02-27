@@ -11,39 +11,39 @@ namespace inflector_extension
         private readonly IInflector inflector;
 
         private readonly IDictionary<Int64, string> simpleCases = new Dictionary<long, string> {
-        {0, "zero"},                                                                                                 
-        {1, "one"},
-        {2, "two"},
-        {3, "three"},
-        {4, "four"},
-        {5, "five"},
-        {6, "six"},
-        {7, "seven"},
-        {8, "eight"},
-        {9, "nine"},
-        {10, "ten"},
-        {11, "eleven"},
-        {12, "twelve"},
-        {13, "thirteen"},
-        {14, "fourteen"},
-        {15, "fifteen"},
-        {16, "sixteen"},
-        {17, "seventeen"},
-        {18, "eighteen"},
-        {19, "nineteen"}
+        {0, "Zero"},                                                                                                 
+        {1, "One"},
+        {2, "Two"},
+        {3, "Three"},
+        {4, "Four"},
+        {5, "Five"},
+        {6, "Six"},
+        {7, "Seven"},
+        {8, "Eight"},
+        {9, "Nine"},
+        {10, "Ten"},
+        {11, "Eleven"},
+        {12, "Twelve"},
+        {13, "Thirteen"},
+        {14, "Fourteen"},
+        {15, "Fifteen"},
+        {16, "Sixteen"},
+        {17, "Seventeen"},
+        {18, "Eighteen"},
+        {19, "Nineteen"}
         };
 
         private readonly IDictionary<Int64, string> tensCases = new Dictionary<long, string> {
-        {2, "twenty"},
-        {3, "thirty"},
-        {4, "forty"},
-        {5, "fifty"},
-        {6, "sixty"},
-        {7, "seventy"},
-        {8, "eighty"},
-        {9, "ninety"}};
+        {2, "Twenty"},
+        {3, "Thirty"},
+        {4, "Forty"},
+        {5, "Fifty"},
+        {6, "Sixty"},
+        {7, "Seventy"},
+        {8, "Eighty"},
+        {9, "Ninety"}};
 
-        private readonly string[] scaleWords = new[] { "", "thousand", "million", "billion" };
+        private readonly string[] scaleWords = new[] { "", "Thousand", "Million", "Billion" };
 
         internal FluentNumberInflector(Int64 value, IInflector inflector) {
             this.value = value;
@@ -58,7 +58,7 @@ namespace inflector_extension
             get {
                 var negativePrefix = "";
                 if (value < 0) {
-                    negativePrefix = "negative ";
+                    negativePrefix = "Negative ";
                 }
                 var absValue = Math.Abs(value);
                 return negativePrefix + (this.simpleCases.ContainsKey(absValue) ? this.simpleCases[absValue] : GetNonSimpleName(absValue));
@@ -109,7 +109,7 @@ namespace inflector_extension
 
             if (hundreds != 0)
             {
-                groupText += simpleCases[hundreds] + " hundred";
+                groupText += simpleCases[hundreds] + " Hundred";
 
                 if (tensUnits != 0)
                     groupText += " and ";
@@ -132,7 +132,7 @@ namespace inflector_extension
 
         private static long[] GetDigitSets(long absValue) {
             var digitSets = new long[4];
-            for (int i = 0; i < 4; i++) {
+            for (var i = 0; i < 4; i++) {
                 digitSets[i] = absValue % 1000;
                 absValue /= 1000;
             }
