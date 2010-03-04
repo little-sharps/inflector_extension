@@ -1,35 +1,67 @@
+require 'rubygems'
 require 'albacore'
+require 'net/github-upload' 
+
+login = `git config github.user`.chomp  # your login for github
+
+token = `git config github.token`.chomp # your token for github
+
+repo =  $1 if repo.nil? && `git remote show origin` =~ /git@github.com:(.+?)\.git/
+repo.chomp!
+
+project = repo.split('/')[1]
+
+tag_name = ENV['TAG']
+
+package_file = "#{project}-#{tag_name}.zip"
+
+gh = Net::GitHub::Upload.new(
+	:login => login,
+	:token => token
+)
+
+def die_from_lack_of_tag ()
+	puts "You must provide a TAG=[name]"
+	exit 1
+end
 
 namespace :release do
 	desc "Build release binaries."
 	msbuild :build do |msb|
 	  msb.properties :configuration => :Release
 	  msb.targets :Rebuild
-	  msb.solution = "inflector_extension.sln"
+	  msb.solution = "#{project}.sln"
 	end
 	
 	desc "Package release image"
 	zip :package => :build do |zip|
-		tag_name = ENV['TAG']
-		if tag_name 
-			zip.directories_to_zip "inflector_extension/bin/Release/"
-			zip.additional_files = "README.markdown"
-			zip.output_file = "inflector_extension-#{tag_name}.zip"
-			zip.output_path = File.dirname(__FILE__)
-		else
-			puts 'No tag specified, not packaging.'
-		end
+		die_from_lack_of_tag unless tag_name 
+		zip.directories_to_zip "#{project}/bin/Release/"
+		zip.additional_files = "README.markdown"
+		zip.output_file = package_file
+		zip.output_path = File.dirname(__FILE__)
 	end
 	
 	desc "Tag repository"
 	task :tag do 
-		tag_name = ENV['TAG']
-		if tag_name 
-			`git tag "#{tag_name}"`
-			`git push origin "#{tag_name}"`
-		else
-			puts 'No tag specified, not tagging.'
-		end
+		die_from_lack_of_tag unless tag_name 
+		`git tag "#{tag_name}"`
+		`git push origin "#{tag_name}"`
+	end
+	
+	desc "Upload release package"
+	task :upload => :package do
+		die_from_lack_of_tag unless tag_name 
+		
+		puts("GitHub Repo: #{repo}")
+		puts("GitHub Login: #{login}")
+		puts("GitHub Token: #{token}")
+
+		gh.upload(
+			:repos => repo,
+			:file  => package_file,
+			:description => "Release #{tag_name}"
+		)
 	end
 	
 	desc "Do all release tasks"
