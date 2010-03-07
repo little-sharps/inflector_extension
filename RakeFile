@@ -65,7 +65,7 @@ namespace :release do
 	end
 	
 	desc "Do all release tasks"
-	task :all => [:tag, :package] do
+	task :all => [:tag, :upload] do
 	
 	end
 end
