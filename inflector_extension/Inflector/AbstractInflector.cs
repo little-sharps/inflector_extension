@@ -18,6 +18,7 @@ namespace inflector_extension.Inflector
         private readonly HashSet<string> uncountables = new HashSet<string>();
         private readonly HashSet<IRuleApplier> unaccentRules = new HashSet<IRuleApplier>();
         private readonly List<IRuleApplier> dataDictionaryRules = new List<IRuleApplier>(50);
+        private readonly List<IRuleApplier> capitalizeRules = new List<IRuleApplier>();
 
         protected AbstractInflector()
         {
@@ -89,6 +90,10 @@ namespace inflector_extension.Inflector
             unaccentRules.Add(new CaseSensitiveRule(rule, replacement));
         }
 
+        protected void AddCapitalize(string rule, string replacement) {
+            capitalizeRules.Add(new CaseSensitiveRule(rule,replacement));
+        }
+
         protected void AddSingular(string rule, string replacement)
         {
             singulars.Add(new NounsRule(rule, replacement));
@@ -148,7 +153,7 @@ namespace inflector_extension.Inflector
 
         public string Capitalize(string word)
         {
-            return word.Substring(0, 1).ToUpper() + word.Substring(1).ToLower();
+            return ApplyRules(capitalizeRules, word.Substring(0, 1).ToUpper() + word.Substring(1).ToLower());
         }
 
         public string Uncapitalize(string word)

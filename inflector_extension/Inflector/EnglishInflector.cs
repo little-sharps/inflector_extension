@@ -69,6 +69,9 @@ namespace inflector_extension.Inflector
             AddUncountable("series");
             AddUncountable("fish");
             AddUncountable("sheep");
+
+            AddCapitalize("Ssn", "SSN");
+            AddCapitalize("Vin", "VIN");
         }
 
         public override string Ordinalize(string number)

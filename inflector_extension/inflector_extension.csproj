@@ -57,6 +57,7 @@
     <Compile Include="Specs\InflectIntToPhrase.cs" />
     <Compile Include="Specs\Inflections.cs" />
     <Compile Include="Specs\InflectToCheckAmountLongHand.cs" />
+    <Compile Include="Specs\SpecialCapitalazationCases.cs" />
     <Compile Include="Specs\Syntax.cs" />
     <Compile Include="InflectorStringExtension.cs" />
     <Compile Include="FluentStringInflector.cs" />

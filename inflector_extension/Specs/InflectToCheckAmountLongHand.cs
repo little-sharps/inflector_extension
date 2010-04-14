@@ -1,3 +1,4 @@
+#if DEBUG
 using NUnit.Framework;
 using SharpTestsEx;
 
@@ -18,3 +19,4 @@ namespace inflector_extension.Specs
 }
 
 // ReSharper restore InconsistentNaming
+#endif
