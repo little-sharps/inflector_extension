@@ -11,3 +11,4 @@ test-results/
 bin/
 obj/
 *.suo
+*.sln.cache

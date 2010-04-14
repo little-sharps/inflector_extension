@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace inflector_extension.Inflector
 {
     /// <summary>
@@ -93,5 +95,35 @@ namespace inflector_extension.Inflector
         /// <param name="separateClassNameAndId">true if an underscore is needed before "id"</param>
         /// <returns><paramref name="className"/>, with "id" tacked on at the end.</returns>
         string ForeignKey(string className, bool separateClassNameAndId);
+
+        /// <summary>
+        /// Contains numbers 0 - 19
+        /// </summary>
+        IDictionary<long, string> SimpleNumberCases { get; }
+
+        /// <summary>
+        /// Contains the name of the tens place from 20 - 90
+        /// </summary>
+        IDictionary<long, string> TensNumberCases { get; }
+
+        /// <summary>
+        /// Contains the set name for numbers
+        /// </summary>
+        string[] ScaleNumberWords { get; }
+
+        /// <summary>
+        /// Language specific word for 'Hundreds'
+        /// </summary>
+        string HundredsGroupWord { get; }
+
+        /// <summary>
+        /// Language specific word for 'Negative'
+        /// </summary>
+        string NegativeWord { get; }
+
+        /// <summary>
+        /// Language specific word for 'And'
+        /// </summary>
+        string AndWord { get; }
     }
 }

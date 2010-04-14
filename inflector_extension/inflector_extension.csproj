@@ -45,13 +45,18 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DecimalExtension.cs" />
+    <Compile Include="FluentDecimalInflector.cs" />
     <Compile Include="FluentNumberInflector.cs" />
     <Compile Include="IntExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Specs\InflectIntToPhrase.cs" />
     <Compile Include="Specs\Inflections.cs" />
+    <Compile Include="Specs\InflectToCheckAmountLongHand.cs" />
     <Compile Include="Specs\Syntax.cs" />
     <Compile Include="InflectorStringExtension.cs" />
     <Compile Include="FluentStringInflector.cs" />

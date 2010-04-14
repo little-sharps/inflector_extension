@@ -177,5 +177,13 @@ namespace inflector_extension.Inflector
         {
             return Unaccent(className + (separateClassNameAndId ? "_ID":"Id"));
         }
+
+        public abstract string[] ScaleNumberWords { get; }
+        public abstract IDictionary<long, string> TensNumberCases { get; }
+        public abstract IDictionary<long, string> SimpleNumberCases { get; }
+
+        public abstract string HundredsGroupWord { get; }
+        public abstract string NegativeWord { get; }
+        public abstract string AndWord { get; }
     }
 }

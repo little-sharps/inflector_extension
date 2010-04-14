@@ -127,6 +127,36 @@ namespace inflector_extension.Inflector
             return number + "o.";
         }
 
+        public override string[] ScaleNumberWords
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        public override IDictionary<long, string> SimpleNumberCases
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        public override IDictionary<long, string> TensNumberCases
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        public override string NegativeWord
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        public override string HundredsGroupWord
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        public override string AndWord
+        {
+            get { throw new NotImplementedException(); }
+        }
+
         #endregion
     }
 }
