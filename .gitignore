@@ -12,3 +12,4 @@ bin/
 obj/
 *.suo
 *.sln.cache
+*.gem
