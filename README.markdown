@@ -39,5 +39,6 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-Some Portions of this code (the best parts, right?) are copied from the [unHAddins project ](http://code.google.com/p/unhaddins/ "unhaddins - Project Hosting on Google Code").
+Some Portions of this code (the best parts, right?) are copied from the [unHAddins project ](http://code.google.com/p/unhaddins/ "unhaddins - Project Hosting on Google Code"). The unmodified source I started with can be found in the `unhaddins.zip` archive under `external_source`.
+
 
