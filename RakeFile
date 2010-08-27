@@ -42,10 +42,14 @@ namespace :release do
 	desc "Tag repository"
 	task :tag do 
 		die_from_lack_of_tag unless tag_name 
-		File.open('VERSION', 'w') {|f| f.write(tag_name) }
-		`git commit VERSION -m"Update version to #{tag_name}."`
-		`git tag "#{tag_name}"`
-		`git push origin "#{tag_name}"`
+		
+		current_version = File.read(File.expand_path("VERSION")).strip
+		unless current_version == tag_name
+      File.open('VERSION', 'w') {|f| f.write(tag_name) }
+      `git commit VERSION -m"Update version to #{tag_name}."`
+      `git tag "#{tag_name}"`
+      `git push origin "#{tag_name}"`
+		end
 	end
 	
 	desc "Do all release tasks"
