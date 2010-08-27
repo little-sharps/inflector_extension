@@ -6,7 +6,7 @@ Usage
   1. Reference it :: The extension classes are in the global namespace so you don't need any `usings` before they are available.
   2. Use it :: `"string".InflectTo()` or `1.InflectTo()` or, for a real blast: `637849590678.InflectTo().Phrase`
 
-See the [specs](http://github.com/brendanjerwin/inflector_extension/tree/master/inflector_extension/Specs/) for example usages.
+See the [specs](http://github.com/littlebits/inflector_extension/tree/master/inflector_extension/Specs/) for example usages.
 
 ------
 
