@@ -33,7 +33,7 @@ namespace :release do
 	  msb.solution = "#{project}.sln"
 	end
 	
-	desc "Package release image"
+	desc "Package release archive"
 	zip :package => :build do |zip|
 		die_from_lack_of_tag unless tag_name 
 		zip.directories_to_zip "#{project}/bin/Release/"
@@ -42,14 +42,22 @@ namespace :release do
 		zip.output_path = File.dirname(__FILE__)
 	end
 	
+	desc "Build gem"
+	gem :package => :build do 
+		die_from_lack_of_tag unless tag_name 
+		`gem build "#{project}.gemspec"`
+	end
+	
 	desc "Tag repository"
 	task :tag do 
 		die_from_lack_of_tag unless tag_name 
+		File.open('VERSION', 'w') {|f| f.write(tag_name) }
+		`git commit VERSION -m"Update version to #{tag_name}."`
 		`git tag "#{tag_name}"`
 		`git push origin "#{tag_name}"`
 	end
 	
-	desc "Upload release package"
+	desc "Upload release archive"
 	task :upload => :package do
 		die_from_lack_of_tag unless tag_name 
 		
@@ -65,7 +73,7 @@ namespace :release do
 	end
 	
 	desc "Do all release tasks"
-	task :all => [:tag, :upload] do
+	task :all => [:tag, :gem, :upload] do
 	
 	end
 end

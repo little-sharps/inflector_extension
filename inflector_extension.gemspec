@@ -1,10 +1,9 @@
 # -*- encoding: utf-8 -*-
-lib = File.expand_path('../lib/', __FILE__)
-$:.unshift lib unless $:.include?(lib)
+version = File.read(File.expand_path("../VERSION", __FILE__)).strip
 
 Gem::Specification.new do |s|
   s.name        = "inflector_extension"
-  s.version     = "0.0.5"
+  s.version     = version
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Brendan Erwin"]
   s.email       = ["brendanjerwin@gmail.com"]
