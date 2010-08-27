@@ -33,15 +33,6 @@ namespace :release do
 	  msb.solution = "#{project}.sln"
 	end
 	
-	desc "Package release archive"
-	zip :package => :build do |zip|
-		die_from_lack_of_tag unless tag_name 
-		zip.directories_to_zip "#{project}/bin/Release/"
-		zip.additional_files = "README.markdown"
-		zip.output_file = package_file
-		zip.output_path = File.dirname(__FILE__)
-	end
-	
 	desc "Build gem"
 	task :gem => :build do 
 		die_from_lack_of_tag unless tag_name 
@@ -57,23 +48,8 @@ namespace :release do
 		`git push origin "#{tag_name}"`
 	end
 	
-	desc "Upload release archive"
-	task :upload => :package do
-		die_from_lack_of_tag unless tag_name 
-		
-		puts("GitHub Repo: #{repo}")
-		puts("GitHub Login: #{login}")
-		puts("GitHub Token: #{token}")
-
-		gh.upload(
-			:repos => repo,
-			:file  => package_file,
-			:description => "Release #{tag_name}"
-		)
-	end
-	
 	desc "Do all release tasks"
-	task :all => [:tag, :gem, :upload] do
+	task :all => [:tag, :gem] do
 	
 	end
 end
