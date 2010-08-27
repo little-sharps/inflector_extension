@@ -74,6 +74,7 @@
     <Compile Include="Inflector\ItalianInflector.cs" />
     <Compile Include="Inflector\NounsRule.cs" />
     <Compile Include="Inflector\SpanishInflector.cs" />
+    <Compile Include="VersionInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

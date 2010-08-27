@@ -45,10 +45,12 @@ namespace :release do
 		
 		current_version = File.read(File.expand_path("VERSION")).strip
 		unless current_version == tag_name
-      File.open('VERSION', 'w') {|f| f.write(tag_name) }
-      `git commit VERSION -m"Update version to #{tag_name}."`
-      `git tag "v#{tag_name}"`
-      `git push origin "#{tag_name}"`
+			numeric_only = tag_name.gsub(/[a-z]/,'')
+			File.open("#{project}/VersionInfo.cs", 'w') {|f| f.write("[assembly: System.Reflection.AssemblyVersion(\"#{numeric_only}\"), System.Reflection.AssemblyFileVersion(\"#{numeric_only}\")]")}
+			File.open('VERSION', 'w') {|f| f.write(tag_name) }
+			`git commit VERSION -m"Update version to #{tag_name}."`
+			`git tag "v#{tag_name}"`
+			`git push origin "v#{tag_name}"`
 		end
 	end
 	
