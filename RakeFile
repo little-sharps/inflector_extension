@@ -43,7 +43,7 @@ namespace :release do
 	end
 	
 	desc "Build gem"
-	gem :package => :build do 
+	task :gem => :build do 
 		die_from_lack_of_tag unless tag_name 
 		`gem build "#{project}.gemspec"`
 	end
