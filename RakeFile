@@ -47,7 +47,7 @@ namespace :release do
 		unless current_version == tag_name
       File.open('VERSION', 'w') {|f| f.write(tag_name) }
       `git commit VERSION -m"Update version to #{tag_name}."`
-      `git tag "#{tag_name}"`
+      `git tag "v#{tag_name}"`
       `git push origin "#{tag_name}"`
 		end
 	end
