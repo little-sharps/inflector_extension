@@ -1,4 +1,4 @@
-Inflector Extension
+Inflector Extension ![Project status](http://stillmaintained.com/littlebits/inflector_extension.png)
 ======
 
 Usage
