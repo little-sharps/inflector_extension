@@ -55,7 +55,7 @@ namespace inflector_extension
 	    /// <value>
 	    /// 	Converts a word like &quot;send_email&quot; to &quot;SendEmail&quot;. 
 	    /// </value>
-	    private string Pascalized {
+	    public string Pascalized {
 	        get { return this.inflector.Pascalize(this.value); }
 	    }
 

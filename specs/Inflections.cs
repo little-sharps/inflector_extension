@@ -74,6 +74,11 @@ namespace specs
         {
             "catToy".InflectTo().Underscored.Should().Be.EqualTo("cat_toy");
         }
+
+        [Test]
+        public void ItShouldPascalize() {
+            "catToy".InflectTo().Pascalized.Should().Be("CatToy");
+        }
     }
 }
 
