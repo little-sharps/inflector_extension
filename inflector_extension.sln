@@ -1,23 +1,35 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{FBF5CB56-6E13-404C-B770-9777057F4E5F}"
 	ProjectSection(SolutionItems) = preProject
-		RakeFile = RakeFile
+		inflector_extension.nuspec = inflector_extension.nuspec
+		RakeFile.rb = RakeFile.rb
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inflector_extension", "inflector_extension\inflector_extension.csproj", "{3B23FF35-5F36-459E-A4DF-ABDB4FC35767}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "specs", "specs\specs.csproj", "{7AA1E5AE-2063-4740-964B-0574A509A7D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		Release35|Any CPU = Release35|Any CPU
+		Release40|Any CPU = Release40|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3B23FF35-5F36-459E-A4DF-ABDB4FC35767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3B23FF35-5F36-459E-A4DF-ABDB4FC35767}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B23FF35-5F36-459E-A4DF-ABDB4FC35767}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B23FF35-5F36-459E-A4DF-ABDB4FC35767}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B23FF35-5F36-459E-A4DF-ABDB4FC35767}.Release35|Any CPU.ActiveCfg = Release35|Any CPU
+		{3B23FF35-5F36-459E-A4DF-ABDB4FC35767}.Release35|Any CPU.Build.0 = Release35|Any CPU
+		{3B23FF35-5F36-459E-A4DF-ABDB4FC35767}.Release40|Any CPU.ActiveCfg = Release40|Any CPU
+		{3B23FF35-5F36-459E-A4DF-ABDB4FC35767}.Release40|Any CPU.Build.0 = Release40|Any CPU
+		{7AA1E5AE-2063-4740-964B-0574A509A7D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AA1E5AE-2063-4740-964B-0574A509A7D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AA1E5AE-2063-4740-964B-0574A509A7D2}.Release35|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AA1E5AE-2063-4740-964B-0574A509A7D2}.Release35|Any CPU.Build.0 = Debug|Any CPU
+		{7AA1E5AE-2063-4740-964B-0574A509A7D2}.Release40|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AA1E5AE-2063-4740-964B-0574A509A7D2}.Release40|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>inflector_extension</id>
+    <version>0.0.0</version>
+    <authors>Brendan Erwin</authors>
+    <description>Extension Methods for Inflector in C#</description>
+    <language>en-US</language>
+    <projectUrl>https://github.com/littlebits/inflector_extension</projectUrl>
+    <licenseUrl>https://github.com/littlebits/inflector_extension</licenseUrl>
+	<tags>inflector extension inflection pluralize titleize humanize</tags>
+  </metadata>
+  <files>
+    <file src=".\inflector_extension\bin\Release40\*.dll" target="lib\Net40" />
+	<file src=".\inflector_extension\bin\Release40\*.xml" target="lib\Net40" />
+	<file src=".\inflector_extension\bin\Release35\*.dll" target="lib\Net35" />
+	<file src=".\inflector_extension\bin\Release35\*.xml" target="lib\Net35" />
+  </files>
+</package>
