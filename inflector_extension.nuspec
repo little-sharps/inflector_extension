@@ -8,7 +8,7 @@
     <language>en-US</language>
     <projectUrl>https://github.com/littlebits/inflector_extension</projectUrl>
     <licenseUrl>https://github.com/littlebits/inflector_extension</licenseUrl>
-	<tags>inflector extension inflection pluralize titleize humanize</tags>
+	<tags>littlebits inflector extension inflection pluralize titleize humanize</tags>
   </metadata>
   <files>
     <file src=".\inflector_extension\bin\Release40\*.dll" target="lib\Net40" />
