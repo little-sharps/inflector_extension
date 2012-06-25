@@ -140,6 +140,7 @@ namespace inflector_extension.Inflector
 
         public string Camelize(string lowercaseAndUnderscoredWord)
         {
+            lowercaseAndUnderscoredWord = lowercaseAndUnderscoredWord.Replace(" ", "_");
             return Uncapitalize(Pascalize(lowercaseAndUnderscoredWord));
         }
 
