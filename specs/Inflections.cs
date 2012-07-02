@@ -15,6 +15,18 @@ namespace specs
         }
 
         [Test]
+        public void ItShouldRemoveSpacesWhileCamelizing()
+        {
+            "Cat Toy".InflectTo().Camelized.Should().Be.EqualTo("catToy");
+        }
+
+        [Test]
+        public void ItShouldProperlyCapitalizeWhileCamelizing()
+        {
+            "Cat toy".InflectTo().Camelized.Should().Be.EqualTo("catToy");
+        }
+
+        [Test]
         public void ItShouldCapitalize()
         {
             "cat toy".InflectTo().Capitalized.Should().Be.EqualTo("Cat toy");
