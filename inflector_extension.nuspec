@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<package>
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>inflector_extension</id>
     <version>0.0.0</version>
     <authors>Brendan Erwin</authors>
+    <owners>Brendan Erwin</owners>
+    <licenseUrl>https://github.com/littlebits/inflector_extension</licenseUrl>
+    <projectUrl>https://github.com/littlebits/inflector_extension</projectUrl>
+    <id>inflector_extension</id>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Extension Methods for Inflector in C#</description>
     <language>en-US</language>
-    <projectUrl>https://github.com/littlebits/inflector_extension</projectUrl>
-    <licenseUrl>https://github.com/littlebits/inflector_extension</licenseUrl>
-	<tags>littlebits inflector extension inflection pluralize titleize humanize</tags>
+    <tags>littlebits inflector extension inflection pluralize titleize humanize</tags>
   </metadata>
   <files>
-    <file src=".\inflector_extension\bin\Release40\*.dll" target="lib\Net40" />
-	<file src=".\inflector_extension\bin\Release40\*.xml" target="lib\Net40" />
-	<file src=".\inflector_extension\bin\Release35\*.dll" target="lib\Net35" />
-	<file src=".\inflector_extension\bin\Release35\*.xml" target="lib\Net35" />
+    <file src=".\inflector_extension\bin\Release35\inflector_extension.dll" target="lib\Net35\inflector_extension.dll" />
+    <file src=".\inflector_extension\bin\Release40\inflector_extension.dll" target="lib\Net40\inflector_extension.dll" />
   </files>
 </package>
